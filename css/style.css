@@ -1,0 +1,58 @@
+/* ********GENERALS*********** */
+body{
+    background-color:#d5dbd8;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ********UTILITIES********** */
+/* bg-app */
+#app{
+    background-color: white;
+    height: 95vh;
+}
+
+.bg-green{
+    height: 15vh;
+    background-color: #009688;
+    z-index: -1;
+}
+.container{
+        --bs-gutter-x: 0;
+}
+
+
+/* SIDE-CONTAINER: */
+
+.side-container{
+    flex-basis: 35%;
+}
+/* TOP side-container */
+.nav-container{
+    background-color: #eaeaea;
+}
+.notifications-container{
+    background-color: #8edafc;
+}
+.research-container{
+    background-color: #fafafa;
+}
+/* BOTTOM side-container */
+.user{
+    padding-bottom:  1rem;
+}
+
+/* MAIN-CONTAINER */
+.main-container{
+    flex-grow: 1;
+    overflow: auto;
+    height: 100%;
+}
+.messages-container{
+    background-image: url("../img/mine.jpg");
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.chat-input-container{
+    background-color: #f3eeea;
+}
