@@ -1,58 +1,120 @@
+:root {
+    --notification-color: #8edafc;
+    --text-lightgray: #c1cbd9;
+}
 /* ********GENERALS*********** */
-body{
+body {
     background-color:#d5dbd8;
     font-family: 'Roboto', sans-serif;
 }
 
+img {
+    width: 100%;
+    display: block;
+}
+
+small{
+    font-size: 14px;
+}
+
 /* ********UTILITIES********** */
 /* bg-app */
-#app{
+.text-gray{
+    color: #858384;
+}
+#app {
     background-color: white;
     height: 95vh;
 }
 
-.bg-green{
+.bg-green {
     height: 15vh;
     background-color: #009688;
     z-index: -1;
 }
-.container{
+
+.container {
         --bs-gutter-x: 0;
 }
 
+.avatar-container img {
+    width: 5vh;
+    object-fit: cover;
+}
+
+.text-lightgray {
+    color: var(--text-lightgray) ;
+}
 
 /* SIDE-CONTAINER: */
 
-.side-container{
-    flex-basis: 35%;
+.side-container {
+    flex-basis: 40%;
 }
+
 /* TOP side-container */
-.nav-container{
+.nav-container {
     background-color: #eaeaea;
 }
-.notifications-container{
-    background-color: #8edafc;
+
+.notifications-container {
+    background-color: var(--notification-color);
 }
-.research-container{
+
+.fa-bell-slash {
+    color: var(--notification-color);
+    background-color: white;
+    padding: 0.5rem;
+    aspect-ratio: 1/1;   
+}
+
+.research-container {
     background-color: #fafafa;
 }
+
+.research-container .btn,.research-container input {
+    --bs-btn-border-width: 0;
+    border-radius: 0;
+    border: 1px solid #ced4da;
+}
+
 /* BOTTOM side-container */
-.user{
-    padding-bottom:  1rem;
+.contacts-container .avatar-container {
+    padding-bottom:  2rem;
 }
 
 /* MAIN-CONTAINER */
-.main-container{
+.main-container {
     flex-grow: 1;
     overflow: auto;
     height: 100%;
 }
-.messages-container{
+
+.last-access {
+    font-size: 14px;
+}
+
+.chat-input-container {
+    background-color: #f3eeea;
+}
+
+.messages-container {
     background-image: url("../img/mine.jpg");
     flex-grow: 1;
     overflow: auto;
 }
 
-.chat-input-container{
-    background-color: #f3eeea;
+.received-message, .envoy-message {
+    padding: .5rem;
+    margin-bottom: .8rem;
+    max-width: 70%;
+}
+
+.envoy-message {
+    background-color: #d5f9ba;
+    text-align: end;
+}
+
+.received-message {
+    background-color: white;
 }
