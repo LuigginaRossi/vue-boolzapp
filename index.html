@@ -19,14 +19,20 @@
 </head>
 <body>
 
+    <!-- Milestone 1
+     Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi)
+     e dall’interlocutore (bianco) assegnando due classi CSS diverse
+    Visualizzazione dinamica della lista contatti: tramite la direttiva v-for,
+    visualizzare nome e immagine di ogni contatto -->
     <div class="bg-green  position-absolute top-0 start-0 end-0"></div>
     <div id="app" class="container mt-3 d-flex">
        <div class="side-container d-flex flex-column">
             <div class="top-container flex-shrink-1">
                 <div class="nav-container d-flex justify-content-between p-3 ">
                     <div class="avatar-container d-flex align-items-center">
-                        <img src="img/avatar_io.jpg" alt="avatar_1" class="rounded-circle">
-                        <span class=" ms-3">Sofia</span>
+                        <img :src="user.avatar" alt="avatar_1" class="rounded-circle">
+                        <span class=" ms-3">{{user.name}}
+                        </span>
                     </div>
 
                     <div class="icon-container d-flex align-items-center text-lightgray">
@@ -36,26 +42,35 @@
                     </div>
                 </div>
         
-                <div class="notifications-container p-3">
-                    <i class="fa-solid fa-bell-slash rounded-circle me-3"></i>Nofiche
+                <div class="notifications-container p-3 d-flex">
+                    <div>
+                        <i class="fa-solid fa-bell-slash rounded-circle me-3"></i>
+                    </div>
+                    <span>
+                        Ricevi notifiche di nuovi messaggi
+                        <div class="text-gray text-decoration-underline">Ultimo messaggio inviato</div>
+                    </span>
+                    
                 </div>
                 <div class="research-container pb-3 ">
                     <div class="input-group mb-3">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon1">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
                       </div>
                 </div>
             </div>
-            <div class="contacts-container flex-grow-1 overflow-auto">
-                <div class="avatar-container d-flex align-self-start">
-                    <img src="img/avatar_3.jpg" alt="avatar_1" class="rounded-circle">
-                    <span class=" ms-3">
-                        Sofia
-                        <div class="text-lightgray">Ultimo messaggio inviato</div>
+            <div class="contacts-container flex-grow-1 overflow-auto ">
+                <div class="avatar-container d-flex align-items-center px-3"
+                v-for="(contact, i ) in userList"
+                @click="activeContact(i)">
+                    <img :src="contact.avatar" alt="avatar_1" class="rounded-circle flex-shrink-0">
+                    <span class=" ms-3 flex-grow-1 overflow-auto">
+                        {{contact.name}}
+                        <div class="text-lightgray ">{{contact.messages[0].message}}</div>
                     </span>
-                    <small class="time-sending text-lightgray align-self-top"> 12:00 </small>
+                    <small class="time-sending text-lightgray align-self-start text-end flex-shrink-0"> 12:00 </small>
                 </div>
             </div>
        </div>
@@ -63,12 +78,21 @@
        <div class="main-container d-flex flex-column">
             <div class="flex-shrink-0">
                 <div class="nav-container d-flex justify-content-between p-3 ">
-                    
-                    <div class="current-user-container">
+                    <!-- v-if="currentContact !== -1  -->
+                    <div v-if="currentContact !== -1"  class="current-user-container">
+                        <div class="avatar-container d-flex align-items-center">
+                            <img :src="userList[currentContact].avatar" alt="avatar_1" class="rounded-circle">
+                            <span class=" ms-3">
+                                {{userList[currentContact].name}}
+                                <div class="last-access text-lightgray">Ultimo accesso oggi alle 12:00</div>
+                            </span>
+                        </div>
+                    </div>
+                    <div v-else class="current-user-container">
                         <div class="avatar-container d-flex align-items-center">
                             <img src="img/avatar_1.jpg" alt="avatar_1" class="rounded-circle">
                             <span class=" ms-3">
-                                Sofia
+                                {{userList[0].name}}
                                 <div class="last-access text-lightgray">Ultimo accesso oggi alle 12:00</div>
                             </span>
                         </div>

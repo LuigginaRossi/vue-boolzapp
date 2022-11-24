@@ -1,7 +1,7 @@
 export default [
   {
-    name: 'Michele',
-    avatar: '_1',
+    name: 'Aragorn',
+    avatar: 'img/aragorn.webp',
     visible: true,
     messages: [{
       date: '10/01/2020 15:30:55',
@@ -21,8 +21,8 @@ export default [
     ],
   },
   {
-    name: 'Fabio',
-    avatar: '_2',
+    name: 'Frodo',
+    avatar: 'img/frodo.png',
     visible: true,
     messages: [{
       date: '20/03/2020 16:30:00',
@@ -42,8 +42,8 @@ export default [
     ],
   },
   {
-    name: 'Samuele',
-    avatar: '_3',
+    name: 'Galadriel',
+    avatar: 'img/galadriel.png',
     visible: true,
     messages: [{
       date: '28/03/2020 10:10:40',
@@ -63,8 +63,40 @@ export default [
     ],
   },
   {
-    name: 'Luisa',
-    avatar: '_4',
+    name: 'Gandalf',
+    avatar: 'img/gandalf.jpg',
+    visible: true,
+    messages: [{
+      date: '10/01/2020 15:30:55',
+      message: 'Lo sai che ha aperto una nuova pizzeria?',
+      status: 'sent'
+    },
+    {
+      date: '10/01/2020 15:50:00',
+      message: 'Si, ma preferirei andare al cinema',
+      status: 'received'
+    }
+    ],
+  },
+  {
+    name: 'Radagast',
+    avatar: 'img/radagast.jfif',
+    visible: true,
+    messages: [{
+      date: '10/01/2020 15:30:55',
+      message: 'Lo sai che ha aperto una nuova pizzeria?',
+      status: 'sent'
+    },
+    {
+      date: '10/01/2020 15:50:00',
+      message: 'Si, ma preferirei andare al cinema',
+      status: 'received'
+    }
+    ],
+  },
+  {
+    name: 'Sauron',
+    avatar: 'img/sauron.jpg',
     visible: true,
     messages: [{
       date: '10/01/2020 15:30:55',

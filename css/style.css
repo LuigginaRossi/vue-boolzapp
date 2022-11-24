@@ -38,8 +38,9 @@ small{
 }
 
 .avatar-container img {
-    width: 5vh;
+    width: 50px;
     object-fit: cover;
+    aspect-ratio: 1/1;
 }
 
 .text-lightgray {
@@ -49,7 +50,7 @@ small{
 /* SIDE-CONTAINER: */
 
 .side-container {
-    flex-basis: 40%;
+    min-width: 40%;
 }
 
 /* TOP side-container */
@@ -64,7 +65,7 @@ small{
 .fa-bell-slash {
     color: var(--notification-color);
     background-color: white;
-    padding: 0.5rem;
+    padding: 0.8rem;
     aspect-ratio: 1/1;   
 }
 
