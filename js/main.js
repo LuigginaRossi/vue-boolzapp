@@ -49,6 +49,7 @@ createApp({
           console.log("ciao " + this.selectedUser.name);
        },
       addNewMessage (){
+
         this.selectedUser.messages.push({
           date: this.newMessage.date,
           message: this.newMessage.message,
@@ -56,7 +57,8 @@ createApp({
         }),
 
         console.log(this.newMessage.message);
-
+        this.newMessage.message = ""; 
+        
         setTimeout(() => {
           this.selectedUser.messages.push({
             date: this.newMessage.date,
