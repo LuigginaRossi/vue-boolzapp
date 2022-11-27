@@ -4,8 +4,12 @@
 }
 /* ********GENERALS*********** */
 body {
-    background: linear-gradient(0deg, #DAE1E1 0%, #DCDBD1 100%);
+    /* background: rgb(0,150,136); */
+    background: rgb(0,150,136);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 22%, rgba(219,222,217,1) 22%, rgba(219,222,217,1) 87%, rgba(219,222,217,1) 100%);
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    padding: 1vh;
 }
 
 img {
@@ -30,9 +34,10 @@ li, a {
 
 #app {
     background-color: white;
-    height: 95vh;
+    height: 93vh;
     border-radius: 20px;
     overflow: hidden;
+    margin-top: calc((100vh - 95vh) / 2);
 }
 
 .bg-green {
@@ -131,3 +136,7 @@ li, a {
     background-color: white;
     align-self: flex-start;
 }
+
+#009688
+
+#dbded9
