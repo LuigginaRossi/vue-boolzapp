@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="input-group mx-3">
-                    <input type="text" class="form-control" placeholder="New text" aria-label="Username">
+                    <input @keyup.enter="addNewMessage" v-model="newMessage.message" type="text" class="form-control" placeholder="New text" aria-label="Username">
                 </div>
 
                 <div class="microphone-container text-gray">

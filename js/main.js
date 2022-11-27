@@ -30,17 +30,40 @@ createApp({
           }
           ],
         },
+        newMessage:{
+          date: '10/01/2020 15:50:00',
+          message: '',
+          status: 'sent'
+        },
        }
     },
     methods:{
+      beforeMount () {
+        this.currentContact = this.usersList[0];
+      },
        activeContact (contact, i){
          this.currentContact = i;
          this.selectedUser = contact;
          // alert("ciao" + this.currentContact);
-          console.log("ciao" + this.selectedUser.messages[0].message);
+          console.log("ciao" + this.selectedUser.messages);
        },
-      beforeMount () {
-        this.currentContact = this.usersList[0];
+      addNewMessage (){
+        this.selectedUser.messages.push({
+          date: this.newMessage.date,
+          message: this.newMessage.message,
+          status: this.newMessage.status,
+        }),
+
+        console.log(this.newMessage.message);
+
+        setTimeout(() => {
+          this.selectedUser.messages.push({
+            date: this.newMessage.date,
+            message: 'ok',
+            status: 'received',
+          })
+        }, 1000);
+        
       }
     },
 }).mount("#app");
