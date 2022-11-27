@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +10,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 
@@ -17,6 +19,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
     <!-- Milestone 1
@@ -26,7 +29,7 @@
     visualizzare nome e immagine di ogni contatto -->
     <div class="bg-green  position-absolute top-0 start-0 end-0"></div>
     <div id="app" class="container mt-3 d-flex">
-       <div class="side-container d-flex flex-column">
+        <div class="side-container d-flex flex-column">
             <div class="top-container flex-shrink-1">
                 <div class="nav-container d-flex justify-content-between p-3 ">
                     <div class="avatar-container d-flex align-items-center">
@@ -35,13 +38,19 @@
                         </span>
                     </div>
 
-                    <div class="icon-container d-flex align-items-center text-lightgray">
-                        <i class="fa-solid fa-circle-notch me-3"></i>
-                        <i class="fa-solid fa-message me-3"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
+                    <ul class="icon-container d-flex align-items-center ">
+                        <li>
+                            <a href="#"><i class="fa-solid fa-circle-notch me-3"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-solid fa-message me-3"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </li>
+                    </ul>
                 </div>
-        
+
                 <div class="notifications-container p-3 d-flex">
                     <div>
                         <i class="fa-solid fa-bell-slash rounded-circle me-3"></i>
@@ -50,21 +59,21 @@
                         Ricevi notifiche di nuovi messaggi
                         <div class="text-gray text-decoration-underline">Ultimo messaggio inviato</div>
                     </span>
-                    
+
                 </div>
                 <div class="research-container pb-3 ">
                     <div class="input-group mb-3">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon1">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                      </div>
+                        <input type="text" class="form-control" placeholder="Search"
+                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    </div>
                 </div>
             </div>
             <div class="contacts-container flex-grow-1 overflow-auto ">
-                <div class="avatar-container d-flex align-items-center px-3"
-                v-for="(contact, i ) in userList"
-                @click="activeContact(i)">
+                <div class="avatar-container d-flex align-items-center px-3" v-for="(contact, i ) in userList"
+                    :key="i + contact.name" @click="activeContact(contact, i)" >
                     <img :src="contact.avatar" alt="avatar_1" class="rounded-circle flex-shrink-0">
                     <span class=" ms-3 flex-grow-1 overflow-auto">
                         {{contact.name}}
@@ -73,9 +82,9 @@
                     <small class="time-sending text-lightgray align-self-start text-end flex-shrink-0"> 12:00 </small>
                 </div>
             </div>
-       </div>
+        </div>
 
-       <div class="main-container d-flex flex-column">
+        <div class="main-container d-flex flex-column">
             <div class="flex-shrink-0">
                 <div class="nav-container d-flex justify-content-between p-3 ">
                     <!-- v-if="currentContact !== -1  -->
@@ -90,7 +99,7 @@
                     </div>
                     <div v-else class="current-user-container">
                         <div class="avatar-container d-flex align-items-center">
-                            <img src="img/avatar_1.jpg" alt="avatar_1" class="rounded-circle">
+                            <img :src="userList[0].avatar" alt="avatar_1" class="rounded-circle">
                             <span class=" ms-3">
                                 {{userList[0].name}}
                                 <div class="last-access text-lightgray">Ultimo accesso oggi alle 12:00</div>
@@ -98,59 +107,51 @@
                         </div>
                     </div>
 
-                    <div class="icon-container text-lightgray p-2">
-                        <i class="fa-solid fa-magnifying-glass me-3"></i>
-                        <i class="fa-solid fa-paperclip me-3"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                    </div>
-                </div>        
+                    <ul class="icon-container d-flex align-self-center my-0">
+                        <li>
+                            <a href="#"><i class="fa-solid fa-magnifying-glass me-3"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-paperclip me-3"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="messages-container py-5 px-5 d-flex flex-column">
-                <div class="received-message rounded align-self-end">
-                    Pizza?
-                    <small class="text-lightgray ms-5"> 16:05</small>
+                <!--  -->
+                <div class=" rounded"
+                v-for="element in selectedUser.messages"
+                :class="{ 'received-message': element.status == 'received', 'envoy-message' : element.status == 'sent'}">
+                    <span class="me-3"> {{element.message}} </span>
+                    <small class="text-lightgray">16:05</small>
                 </div>
 
-                <div class="envoy-message rounded align-self-start">
-                    A che ora?
-                    <small class="text-lightgray ms-5"> 16:05</small>
-                </div>
-                <div class="received-message rounded align-self-end">
-                    Voluptatibus aut animi consectetur ea molestiae voluptate pariatur adipisci, distinctio
-                     ut consequatur modi, voluptas natus aliquid iure saepe necessitatibus reprehenderit quidem nulla?
-                    <small class="text-lightgray ms-5"> 16:05</small>
-                </div>
-
-                <div class="envoy-message rounded align-self-start">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    <small class="text-lightgray ms-5"> 16:05</small>
-                </div>
-
-                <div class="envoy-message rounded align-self-start">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    <small class="text-lightgray ms-5"> 16:05</small>
-                </div>
-                
             </div>
             <div class="chat-input-container  d-flex justify-content-between  align-items-center py-2 px-4">
- 
+
                 <div class="emoticon-container text-gray">
                     <i class="fa-brands fa-jedi-order fs-4"></i>
                 </div>
-                
+
                 <div class="input-group mx-3">
                     <input type="text" class="form-control" placeholder="New text" aria-label="Username">
-                  </div>
+                </div>
 
                 <div class="microphone-container text-gray">
                     <i class="fa-solid fa-microphone"></i>
                 </div>
+            </div>
         </div>
+    
     </div>
 
-    <script type="module" src="js/users.js"></script>
+    <!-- <script  type="module" src="js/users.js"></script> -->
     <script type="module" src="js/main.js"></script>
     
 </body>
+
 </html>

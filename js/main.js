@@ -6,8 +6,9 @@ const {createApp} = Vue;
 createApp({
     data(){     
        return{
-        userList:[...userList],
+        userList: [...userList],
         currentContact: -1,
+        selectedUser: "",
         user: {
           name: 'Gimli',
           avatar: 'img/gimli.jpg',
@@ -32,11 +33,16 @@ createApp({
        }
     },
     methods:{
-      activeContact (i){
-        this.currentContact = i;
-        // alert("ciao" + this.currentContact);
-      },
-    }
+       activeContact (contact, i){
+         this.currentContact = i;
+         this.selectedUser = contact;
+         // alert("ciao" + this.currentContact);
+          console.log("ciao" + this.selectedUser.messages[0].message);
+       },
+      beforeMount () {
+        this.currentContact = this.usersList[0];
+      }
+    },
 }).mount("#app");
 
 
