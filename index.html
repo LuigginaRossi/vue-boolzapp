@@ -67,7 +67,9 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                         <input type="text" class="form-control" placeholder="Search"
-                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            aria-label="Example text with button addon" aria-describedby="button-addon1"
+                            @keyup.enter="filterName"
+                        >
                     </div>
                 </div>
             </div>
@@ -127,7 +129,7 @@
                 v-for="element in selectedUser.messages"
                 :class="{ 'received-message': element.status == 'received', 'envoy-message' : element.status == 'sent'}">
                     <span class="me-3"> {{element.message}} </span>
-                    <small class="text-lightgray">16:05</small>
+                    <small class="text-lightgray">16:30</small>
                 </div>
 
             </div>

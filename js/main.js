@@ -35,6 +35,7 @@ createApp({
           message: '',
           status: 'sent'
         },
+        text: "",
        }
     },
     methods:{
@@ -45,7 +46,7 @@ createApp({
          this.currentContact = i;
          this.selectedUser = contact;
          // alert("ciao" + this.currentContact);
-          console.log("ciao" + this.selectedUser.messages);
+          console.log("ciao " + this.selectedUser.name);
        },
       addNewMessage (){
         this.selectedUser.messages.push({
@@ -63,8 +64,7 @@ createApp({
             status: 'received',
           })
         }, 1000);
-        
-      }
+      },
     },
 }).mount("#app");
 
