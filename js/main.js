@@ -69,6 +69,9 @@ createApp({
        this.selectedUser.messages.splice(i, 1);
        console.log(i)
       },
+      infoMessage(i){
+        alert("Ultimo messaggio: "+ this.selectedUser.messages[i].date);
+      },
 
     },
      beforeMount (){
