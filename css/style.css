@@ -119,6 +119,30 @@ li, a {
     justify-content: start;
 }
 
+.dropdown-menu button{
+    width: 100%;
+    padding: 0.3rem 0rem;
+    background: transparent;
+    border: none;
+}
+
+.btn-secondary {
+    --bs-btn-color: #0c0c0c;
+    --bs-btn-bg: none; 
+    --bs-btn-border-color: none;
+    --bs-btn-hover-color:#0c0c0c;
+    --bs-btn-hover-bg: transparent;
+    --bs-btn-hover-border-color: #565e64;
+    --bs-btn-focus-shadow-rgb: 130,138,145;
+    --bs-btn-active-color:#0c0c0c;
+    --bs-btn-active-bg: transparent;
+    --bs-btn-active-border-color:none;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: none;
+}
+
 .received-message, .envoy-message {
     padding: .5rem;
     margin-bottom: .8rem;
@@ -137,6 +161,3 @@ li, a {
     align-self: flex-start;
 }
 
-#009688
-
-#dbded9

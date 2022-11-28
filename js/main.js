@@ -67,7 +67,10 @@ createApp({
             status: 'received',
           })
         }, 1000);
-      },  
+      }, 
+      deleteMessage(i){
+        this.selectedUser.messages.splice(i, 1);
+      } ,
     },
     computed:{
       filterName(){
