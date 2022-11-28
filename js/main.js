@@ -6,6 +6,7 @@ const {createApp} = Vue;
 createApp({
     data(){     
        return{
+        dt: luxon.DateTime,
         userList,
         currentContact: -1,
         selectedUser: "",
@@ -47,9 +48,8 @@ createApp({
           console.log("ciao " + this.selectedUser.name);
        },
       addNewMessage (){
-
         this.selectedUser.messages.push({
-          date: this.newMessage.date,
+          date: this.dt.now().toFormat("HH:mm"),
           message: this.newMessage.message,
           status: this.newMessage.status,
         }),
@@ -59,7 +59,7 @@ createApp({
         
         setTimeout(() => {
           this.selectedUser.messages.push({
-            date: this.newMessage.date,
+            date:  this.dt.now().toFormat("HH:mm"),
             message: 'ok',
             status: 'received',
           })
@@ -68,7 +68,7 @@ createApp({
       deleteMessage(i){
        this.selectedUser.messages.splice(i, 1);
        console.log(i)
-      } ,
+      },
     },
      beforeMount (){
        console.log(userList)

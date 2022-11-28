@@ -98,7 +98,7 @@
                             <img :src="userList[currentContact].avatar" alt="avatar_1" class="rounded-circle">
                             <span class=" ms-3">
                                 {{userList[currentContact].name}}
-                                <div class="last-access text-lightgray">Ultimo accesso oggi alle 12:00</div>
+                                <div class="last-access text-lightgray">Ultimo accesso oggi alle 16:30</div>
                             </span>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                     v-for="(element, i) in selectedUser.messages" 
                     :class="{ 'received-message': element.status == 'received', 'envoy-message' : element.status == 'sent'}">
                         <span class="me-3"> {{element.message}} </span>
-                        <div class="text-lightgray d-flex flex-column justify-content-end">
+                        <div class="text-lightgray d-flex flex-column justify-content-end align-items-end">
                             <div class="btn-group">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                     aria-expanded="false">
@@ -153,8 +153,8 @@
                                     
                                 </ul>
                             </div>
-                            <div class="time-sending">
-                                16:30
+                            <div class="time-sending text-end">
+                               {{element.date}}
                             </div>
                         </div>
                     </div>
