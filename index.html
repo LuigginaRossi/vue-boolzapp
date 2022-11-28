@@ -84,7 +84,8 @@
                         {{contact.name}}
                         <div class="text-lightgray" v-if="contact.messages.length > 0" v-html="contact.messages[contact.messages.length - 1].message"></div>
                     </span>
-                    <small class="time-sending text-lightgray align-self-start text-end flex-shrink-0"> 12:00 </small>
+                    <small class="time-sending text-lightgray align-self-start text-end flex-shrink-0"
+                    v-if="contact.messages.length > 0" v-html="contact.messages[contact.messages.length - 1].date"> 12:00 </small>
                 </div>
             </div>
         </div>
@@ -107,7 +108,8 @@
                             <img :src="userList[0].avatar" alt="avatar_1" class="rounded-circle">
                             <span class=" ms-3">
                                 {{userList[0].name}}
-                                <div class="last-access text-lightgray">Ultimo accesso oggi alle 12:00</div>
+                                <div class="last-access text-lightgray">Ultimo accesso oggi <span
+                                    v-if="selectedUser.messages.length > 0" v-html="selectedUser.messages[selectedUser.messages.length - 1].date">12:00</span> </div>
                             </span>
                         </div>
                     </div>

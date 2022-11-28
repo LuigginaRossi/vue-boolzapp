@@ -69,6 +69,7 @@ createApp({
        this.selectedUser.messages.splice(i, 1);
        console.log(i)
       },
+
     },
      beforeMount (){
        console.log(userList)
