@@ -52,7 +52,7 @@ createApp({
       addNewMessage (){
 
         this.selectedUser.messages.push({
-          date: luxon.DateTime.local(),
+          date: this.newMessage.date,
           message: this.newMessage.message,
           status: this.newMessage.status,
         }),
