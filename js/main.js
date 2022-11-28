@@ -30,6 +30,7 @@ createApp({
           }
           ],
         },
+        searchContact: "",
         newMessage:{
           date: '10/01/2020 15:50:00',
           message: '',
@@ -51,7 +52,7 @@ createApp({
       addNewMessage (){
 
         this.selectedUser.messages.push({
-          date: this.newMessage.date,
+          date: luxon.DateTime.local(),
           message: this.newMessage.message,
           status: this.newMessage.status,
         }),
@@ -66,8 +67,15 @@ createApp({
             status: 'received',
           })
         }, 1000);
-      },
+      },  
     },
+    computed:{
+      filterName(){
+        return this.userList.filter(selectedUser =>{
+          return selectedUser.name.toLowerCase().includes(this.searchContact.toLowerCase());
+        })
+      },
+    }
 }).mount("#app");
 
 

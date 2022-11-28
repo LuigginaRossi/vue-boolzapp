@@ -17,6 +17,7 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -68,13 +69,12 @@
                         </button>
                         <input type="text" class="form-control" placeholder="Search"
                             aria-label="Example text with button addon" aria-describedby="button-addon1"
-                            @keyup.enter="filterName"
-                        >
+                            v-model="searchContact">
                     </div>
                 </div>
             </div>
             <div class="contacts-container flex-grow-1 overflow-auto ">
-                <div class="avatar-container d-flex align-items-center px-3" v-for="(contact, i ) in userList"
+                <div class="avatar-container d-flex align-items-center px-3" v-for="(contact, i ) in filterName"
                     :key="i + contact.name" @click="activeContact(contact, i)" >
                     <img :src="contact.avatar" alt="avatar_1" class="rounded-circle flex-shrink-0">
                     <span class=" ms-3 flex-grow-1 overflow-auto">
