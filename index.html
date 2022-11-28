@@ -76,12 +76,13 @@
                 </div>
             </div>
             <div class="contacts-container flex-grow-1 overflow-auto ">
-                <div class="avatar-container d-flex align-items-center px-3" v-for="(contact, i ) in filterName"
+                <div class="avatar-container d-flex align-items-center px-3" 
+                    v-for="(contact, i ) in filterName"
                     :key="i + contact.name" @click="activeContact(contact, i)" >
                     <img :src="contact.avatar" alt="avatar_1" class="rounded-circle flex-shrink-0">
                     <span class=" ms-3 flex-grow-1 overflow-auto">
                         {{contact.name}}
-                        <div class="text-lightgray ">{{contact.messages[0].message}}</div>
+                        <div class="text-lightgray" v-if="contact.messages.length > 0" v-html="contact.messages[contact.messages.length - 1].message"></div>
                     </span>
                     <small class="time-sending text-lightgray align-self-start text-end flex-shrink-0"> 12:00 </small>
                 </div>
@@ -125,36 +126,40 @@
                 </div>
             </div>
 
-            <div class="messages-container py-5 px-5 d-flex flex-column">
-                <!--  -->
-                <div class=" rounded"
-                v-for="(element, i) in selectedUser.messages"
-                :class="{ 'received-message': element.status == 'received', 'envoy-message' : element.status == 'sent'}">
-                    <span class="me-3"> {{element.message}} </span>
-                    <div class="text-lightgray d-flex flex-column justify-content-end">
-                        <div class="btn-group">
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <button>
-                                        Info
-                                    </button>
-                                </li>
-                                <li>
-                                    <button @click="deleteMessage(i)">
-                                        Delete
-                                    </button>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        <div class="time-sending">
-                            16:30
+            <div class="messages-container py-5 px-5 ">
+                <div class="v-if d-flex flex-column"
+                v-if="selectedUser.messages.length > 0">
+                    <!--  -->
+                    <div class=" rounded"
+                    v-for="(element, i) in selectedUser.messages" 
+                    :class="{ 'received-message': element.status == 'received', 'envoy-message' : element.status == 'sent'}">
+                        <span class="me-3"> {{element.message}} </span>
+                        <div class="text-lightgray d-flex flex-column justify-content-end">
+                            <div class="btn-group">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <button>
+                                            Info
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button @click="deleteMessage(i)">
+                                            Delete
+                                        </button>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            <div class="time-sending">
+                                16:30
+                            </div>
                         </div>
                     </div>
                 </div>
+                    
             </div>
             <div class="chat-input-container  d-flex justify-content-between  align-items-center py-2 px-4">
 

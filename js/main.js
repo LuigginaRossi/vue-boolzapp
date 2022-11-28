@@ -6,7 +6,7 @@ const {createApp} = Vue;
 createApp({
     data(){     
        return{
-        userList: [...userList],
+        userList,
         currentContact: -1,
         selectedUser: "",
         user: {
@@ -39,10 +39,7 @@ createApp({
         text: "",
        }
     },
-    methods:{
-      beforeMount () {
-        this.currentContact = this.usersList[0];
-      },
+    methods:{   
        activeContact (contact, i){
          this.currentContact = i;
          this.selectedUser = contact;
@@ -69,9 +66,15 @@ createApp({
         }, 1000);
       }, 
       deleteMessage(i){
-        this.selectedUser.messages.splice(i, 1);
+       this.selectedUser.messages.splice(i, 1);
+       console.log(i)
       } ,
     },
+     beforeMount (){
+       console.log(userList)
+       this.selectedUser = this.userList[0];
+    
+     }, 
     computed:{
       filterName(){
         return this.userList.filter(selectedUser =>{
