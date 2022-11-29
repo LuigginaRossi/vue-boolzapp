@@ -162,6 +162,13 @@ li, a {
     justify-content: space-between;
 }
 
+.message {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    overflow-wrap: anywhere ;
+}
+
 .received-message {
     background-color: #d5f9ba;
     align-self: flex-end;
@@ -171,4 +178,3 @@ li, a {
     background-color: white;
     align-self: flex-start;
 }
-

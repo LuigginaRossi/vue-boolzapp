@@ -136,7 +136,7 @@
                     <div class=" rounded"
                     v-for="(element, i) in selectedUser.messages" 
                     :class="{ 'received-message': element.status == 'received', 'envoy-message' : element.status == 'sent'}">
-                        <span class="me-3"> {{element.message}} </span>
+                        <span class="message me-3"> {{element.message}} </span>
                         <div class="text-lightgray d-flex flex-column justify-content-end align-items-end">
                             <div class="btn-group">
                                 <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
