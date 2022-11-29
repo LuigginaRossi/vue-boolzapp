@@ -3,6 +3,7 @@ export default [
     name: 'Aragorn',
     avatar: 'img/aragorn.webp',
     visible: true,
+    bg: 'img/bg-aragorn.png',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Hai portato a spasso il cane?',
@@ -24,6 +25,7 @@ export default [
     name: 'Frodo',
     avatar: 'img/frodo.png',
     visible: true,
+    bg: 'img/bg-frodo.webp',
     messages: [{
       date: '20/03/2020 16:30:00',
       message: 'Ciao come stai?',
@@ -45,6 +47,7 @@ export default [
     name: 'Galadriel',
     avatar: 'img/galadriel.png',
     visible: true,
+    bg: 'img/bg-galadriel.jpg',
     messages: [{
       date: '28/03/2020 10:10:40',
       message: 'La Marianna va in campagna',
@@ -66,6 +69,7 @@ export default [
     name: 'Gandalf',
     avatar: 'img/gandalf.jpg',
     visible: true,
+    bg: 'img/bg-gandalf.png',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -82,6 +86,7 @@ export default [
     name: 'Radagast',
     avatar: 'img/radagast.jfif',
     visible: true,
+    bg: 'img/bg-radagast.webp',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -98,6 +103,7 @@ export default [
     name: 'Sauron',
     avatar: 'img/sauron.jpg',
     visible: true,
+    bg: 'img/bg-sauron.jpg',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -114,6 +120,7 @@ export default [
     name: 'Aragorn',
     avatar: 'img/aragorn.webp',
     visible: true,
+    bg: 'img/bg-aragorn.png',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Hai portato a spasso il cane?',
@@ -135,6 +142,7 @@ export default [
     name: 'Frodo',
     avatar: 'img/frodo.png',
     visible: true,
+    bg: 'img/bg-frodo.webp',
     messages: [{
       date: '20/03/2020 16:30:00',
       message: 'Ciao come stai?',
@@ -156,6 +164,7 @@ export default [
     name: 'Galadriel',
     avatar: 'img/galadriel.png',
     visible: true,
+    bg: 'img/bg-galadriel.jpg',
     messages: [{
       date: '28/03/2020 10:10:40',
       message: 'La Marianna va in campagna',
@@ -177,6 +186,7 @@ export default [
     name: 'Gandalf',
     avatar: 'img/gandalf.jpg',
     visible: true,
+    bg: 'img/bg-gandalf.png',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -193,6 +203,7 @@ export default [
     name: 'Radagast',
     avatar: 'img/radagast.jfif',
     visible: true,
+    bg: 'img/bg-radagast.webp',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -209,6 +220,7 @@ export default [
     name: 'Sauron',
     avatar: 'img/sauron.jpg',
     visible: true,
+    bg: 'img/bg-sauron.jpg',
     messages: [{
       date: '10/01/2020 15:30:55',
       message: 'Lo sai che ha aperto una nuova pizzeria?',
@@ -221,4 +233,5 @@ export default [
     }
     ],
   },
+  
   ];

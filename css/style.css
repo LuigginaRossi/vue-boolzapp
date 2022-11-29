@@ -119,6 +119,17 @@ li, a {
     justify-content: start;
 }
 
+.v-if{
+    height: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: center center;
+    background-position-x: center;
+    background-position-y: center;
+}
+
 .dropdown-menu button{
     width: 100%;
     padding: 0.3rem 0rem;

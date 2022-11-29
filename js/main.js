@@ -38,6 +38,7 @@ createApp({
           status: 'sent'
         },
         text: "",
+        bg: "",
        }
     },
     methods:{   
@@ -46,6 +47,7 @@ createApp({
          this.selectedUser = contact;
          // alert("ciao" + this.currentContact);
           console.log("ciao " + this.selectedUser.name);
+          this.bg = this.selectedUser.bg;
        },
       addNewMessage (){
         this.selectedUser.messages.push({
@@ -58,11 +60,18 @@ createApp({
         this.newMessage.message = ""; 
         
         setTimeout(() => {
+          const lastAccessEl = document.querySelector(".last-access");
+          console.log(lastAccessEl);
+          lastAccessEl.innerHTML = `Online       <small>Sta scrivendo...</small> `;
           this.selectedUser.messages.push({
             date:  this.dt.now().toFormat("HH:mm"),
             message: 'ok',
             status: 'received',
           })
+              setTimeout(() =>{
+                lastAccessEl.innerHTML = `Offline: <small>${this.dt.now().toFormat("HH:mm")} </small>`;
+              },1500);
+          
         }, 1000);
       }, 
       deleteMessage(i){

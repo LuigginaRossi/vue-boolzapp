@@ -128,9 +128,10 @@
                 </div>
             </div>
 
-            <div class="messages-container py-5 px-5 ">
+            <div class="messages-container">
                 <div class="v-if d-flex flex-column"
-                v-if="selectedUser.messages.length > 0">
+                v-if="selectedUser.messages.length > 0" 
+                :style="{ backgroundImage: 'url(' + bg + ')' }">
                     <!--  -->
                     <div class=" rounded"
                     v-for="(element, i) in selectedUser.messages" 
