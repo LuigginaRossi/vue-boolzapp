@@ -50,6 +50,8 @@ createApp({
           this.bg = this.selectedUser.bg;
        },
       addNewMessage (){
+        // questa variabile vive solo all'interno di questa funzione 
+        const user = this.selectedUser
         this.selectedUser.messages.push({
           date: this.dt.now().toFormat("HH:mm"),
           message: this.newMessage.message,
@@ -63,7 +65,8 @@ createApp({
           const lastAccessEl = document.querySelector(".last-access");
           console.log(lastAccessEl);
           lastAccessEl.innerHTML = `Online       <small>Sta scrivendo...</small> `;
-          this.selectedUser.messages.push({
+         
+          user.messages.push({
             date:  this.dt.now().toFormat("HH:mm"),
             message: 'ok',
             status: 'received',
@@ -84,8 +87,9 @@ createApp({
 
     },
      beforeMount (){
-       console.log(userList)
-       this.selectedUser = this.userList[0];
+       console.log(userList);
+
+       this.activeContact(this.userList[0], 0);
     
      }, 
     computed:{

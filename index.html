@@ -94,7 +94,7 @@
             <div class="flex-shrink-0">
                 <div class="nav-container d-flex justify-content-between p-3 ">
                     <!-- v-if="currentContact !== -1  -->
-                    <div v-if="currentContact !== -1"  class="current-user-container">
+                    <div class="current-user-container">
                         <div class="avatar-container d-flex align-items-center">
                             <img :src="userList[currentContact].avatar" alt="avatar_1" class="rounded-circle">
                             <span class=" ms-3">
@@ -103,16 +103,7 @@
                             </span>
                         </div>
                     </div>
-                    <div v-else class="current-user-container">
-                        <div class="avatar-container d-flex align-items-center">
-                            <img :src="userList[0].avatar" alt="avatar_1" class="rounded-circle">
-                            <span class=" ms-3">
-                                {{userList[0].name}}
-                                <div class="last-access text-lightgray">Ultimo accesso oggi <span
-                                    v-if="selectedUser.messages.length > 0" v-html="selectedUser.messages[selectedUser.messages.length - 1].date">12:00</span> </div>
-                            </span>
-                        </div>
-                    </div>
+
 
                     <ul class="icon-container d-flex align-self-center my-0">
                         <li>
